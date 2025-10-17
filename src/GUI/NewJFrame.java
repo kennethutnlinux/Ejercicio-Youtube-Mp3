@@ -1,9 +1,5 @@
 package GUI;
 
-import Domain.DescargadorFiltro;
-import Domain.GuardarFiltro;
-import Domain.Tuberia;
-
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -16,24 +12,12 @@ import Domain.Tuberia;
 public class NewJFrame extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(NewJFrame.class.getName());
-    
-    private javax.swing.JTextArea areaMensajes;
-    private javax.swing.JScrollPane scrollPaneMensajes;
-    private String ultimoMp3 = null;
 
     /**
      * Creates new form NewJFrame
      */
     public NewJFrame() {
         initComponents();
-        
-        areaMensajes = new javax.swing.JTextArea();
-        scrollPaneMensajes = new javax.swing.JScrollPane();
-        areaMensajes.setEditable(false);
-        areaMensajes.setColumns(30);
-        areaMensajes.setRows(10);
-        scrollPaneMensajes.setViewportView(areaMensajes);
-
     }
 
     /**
@@ -99,26 +83,11 @@ public class NewJFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void escucharMp3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_escucharMp3ActionPerformed
-          if (ultimoMp3 != null)
-        new ReproductorMp3(areaMensajes).reproducir(ultimoMp3);
-    else
-        areaMensajes.append("No hay ningún MP3 disponible para reproducir.\n");
+        // TODO add your handling code here:
     }//GEN-LAST:event_escucharMp3ActionPerformed
 
     private void convertirBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_convertirBtnActionPerformed
-        String enlace = jTextField1.getText();
-
-        Tuberia tuberia = new Tuberia(new DescargadorFiltro(areaMensajes),
-        new ConvertidorFiltro(areaMensajes),
-        new GuardarFiltro(areaMensajes)
-    );
-
-    ultimoMp3 = tuberia.ejecutar(enlace);
-
-    if (ultimoMp3 != null)
-        areaMensajes.append("Conversión completada: " + ultimoMp3 + "\n");
-    else
-        areaMensajes.append("Error en el proceso.\n");
+        // TODO add your handling code here:
     }//GEN-LAST:event_convertirBtnActionPerformed
 
     /**
